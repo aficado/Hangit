@@ -1,0 +1,423 @@
+/*
+ * Archivo: styles.css
+ * Estilos del Incremento Sprint 2 de HangIt.
+ * Paleta de colores cerrada estrictamente respetada (15 colores aprobados).
+ */
+
+/* Reseteo básico y tipografía */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: #F8FAFC;
+  color: #1E3A8A;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Contenedor con apariencia de pantalla móvil */
+.mobile-screen {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Estructura común para cada pantalla/vista */
+.pantalla-vista {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8FAFC;
+}
+
+/* Barras superiores en azul oscuro (#1E3A8A) */
+.barra-superior {
+  width: 100%;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+.barra-superior-centrada {
+  width: 100%;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+.etiqueta-barra-centrada {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* CA 7.3: Botón de retroceso en barra superior */
+.boton-retroceso {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+/* Etiquetas de la barra superior del juego (Sprint 1) */
+.etiqueta-ronda {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.etiqueta-reactivo {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* Contenedores de contenido de las pantallas */
+.contenido-vista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 24px 20px;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.contenido-juego {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 24px 20px;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+/* CA 6.3: Tarjeta de categoría */
+.tarjeta-categoria {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 22px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* CA 7.4: Tarjeta de detalle de ronda */
+.tarjeta-ronda {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 26px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.texto-ronda {
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* CA 5.3: Franja del contador de intentos */
+.franja-intentos {
+  width: 100%;
+  background-color: #DBEAFE;
+  color: #1E3A8A;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* CA 5.4: Tarjeta central con la oración */
+.tarjeta-oracion {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.texto-oracion {
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+/* CA 5.5: Etiqueta de letras usadas */
+.etiqueta-letras-usadas {
+  color: #64748B;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  min-height: 20px;
+  word-break: break-word;
+}
+
+/* CA 5.6: Caja de texto para un solo carácter */
+.caja-letra {
+  width: 25%;
+  height: 52px;
+  background-color: #FFFFFF;
+  border: 2px solid #93C5FD;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #1E3A8A;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.caja-letra:focus {
+  border-color: #2563EB;
+}
+
+/* CA 13.3 & CA 15.3: Estado deshabilitado de la caja de texto */
+.caja-letra:disabled {
+  background-color: #E5E7EB;
+  color: #9CA3AF;
+  border-color: #E5E7EB;
+  cursor: not-allowed;
+}
+
+/* CA 5.8: Botón Comprobar */
+.boton-comprobar {
+  width: 60%;
+  height: 48px;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CA 13.3 & CA 15.3: Estado deshabilitado del botón Comprobar */
+.boton-comprobar:disabled {
+  background-color: #E5E7EB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* CA 5.9: Área de avisos con altura fija reservada */
+.area-avisos {
+  width: 100%;
+  min-height: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background-color: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Estados visuales del área de avisos según criterios */
+.aviso-vacio {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+
+.aviso-neutro {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+
+.aviso-rojo {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.aviso-verde {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+/* Botón Siguiente Reactivo */
+.contenedor-siguiente {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.boton-siguiente {
+  width: 60%;
+  height: 48px;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón primario de 3/5 ancho para "Jugar" y "Volver al menú" */
+.contenedor-boton-inferior {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.boton-primario {
+  width: 60%;
+  height: 48px;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CA 17.3, 17.4, 17.5: Pantalla de Resumen */
+.tarjeta-resumen-total {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.texto-resumen-total {
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.texto-resumen-exito {
+  color: #374151;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.contenedor-fallados {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.etiqueta-fallados {
+  color: #1E3A8A;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+}
+
+.lista-reactivos-fallados {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.item-fallado {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #1E3A8A;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Control de visibilidad */
+.oculto {
+  display: none !important;
+}
